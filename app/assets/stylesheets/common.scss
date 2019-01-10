@@ -14,3 +14,12 @@ html,body {
     padding: 2em;
     font-family: arial;
 }
+
+.player {
+    text-align: center;
+
+    .demon_mood {
+        font-size: 60pt;
+        color: red;
+    }
+}

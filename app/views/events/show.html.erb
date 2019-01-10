@@ -1,3 +1,23 @@
 <div class='content'>
-<h1>Event view!</h1>
+    <h1>Event view!</h1>
+
+    <ul>
+        <li><strong>Started: </strong><%= @event.is_started %>
+        <li><strong>Times Poked: </strong><%= @event.times_poked %>
+        <li><strong>Demon's Mood: </strong><%= @event.demon_mood %>
+    </ul>
+
+    <h2>Actions</h2>
+    <p>
+    <% if @event.is_started %>
+        <%= button_to "Stop stop stop!", stop_event_path(@event), :method=>:post, class: "btn btn-info" %>
+	<% else %>
+        <%= button_to "Start the ritual", start_event_path(@event), :method=>:post, class: "btn btn-info" %>
+	<% end %>
+    </p>
+
+    <p>
+    <%= button_to "Poke the Demon", change_mood_event_path(@event), :method=>:post, class: "btn btn-info" %>
+    </p>
+
 </div>

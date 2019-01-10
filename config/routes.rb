@@ -17,7 +17,14 @@ Rails.application.routes.draw do
 
   end
 
-  resources :events
+  resources :events do
+    member do
+      post 'start'
+      post 'stop'
+      post 'change_mood'
+    end
+  end
+
   resources :players
 
 end
