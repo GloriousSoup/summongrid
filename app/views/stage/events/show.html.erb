@@ -1,0 +1,19 @@
+<div class="content">
+    <h1>Event Management - <%= @event.title %></h1>
+
+
+    <h2>Players</h2>
+    <ul>
+    <% @event.players.each do |p| %>
+        <li><%= p.name %></li>
+    <% end %>
+    </ul>
+
+
+    <h2>Add New Player</h2>
+
+    <div class="inline-buttons">
+    <%= button_to "Create New Player", stage_players_path(event_id: @event.id), method: :post, class:'btn btn-success' %>
+    </div>
+
+</div>

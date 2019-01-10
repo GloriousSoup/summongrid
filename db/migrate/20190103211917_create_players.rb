@@ -4,6 +4,7 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :phone
       t.string :email
+      t.belongs_to :event
 
       t.timestamps
     end

@@ -17,7 +17,7 @@
     <tbody>
         <% @events.each do |e| %>
         <tr class='event_row'>
-            <td><%= e.title %>
+            <td><%= link_to e.title, stage_event_path(e.id) %></td>
             <td><%= full_datetime_with_year(e.created_at) %></td>
             <td>GOOD</td>
             <td>TBC</td>

@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   namespace :stage do
 
     get '/' => "base#index"
+
+    resources :events, only: [:show] do
+    end
+
+    resources :players 
+
   end
 
   resources :events

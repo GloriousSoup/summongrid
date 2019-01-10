@@ -7,9 +7,16 @@
 
     <%= stylesheet_link_tag "common" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= yield :head %>    
   </head>
 
   <body>
-    <%= yield %>
+    <div class='container-fluid'>
+        <%= render 'layouts/messages' %>
+    </div>
+
+        <%= yield %>
+    <%= yield :very_end %>
   </body>
 </html>

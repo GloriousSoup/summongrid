@@ -51,8 +51,10 @@ ActiveRecord::Schema.define(version: 2019_01_03_211917) do
     t.string "name"
     t.string "phone"
     t.string "email"
+    t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_players_on_event_id"
   end
 
 end
