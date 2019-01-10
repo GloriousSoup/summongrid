@@ -34,6 +34,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass'
 
+gem 'vuejs-rails'
+# Use jquery as the JavaScript library. We have one in jquery-2.2.0.min.js but it's not used right now. 
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

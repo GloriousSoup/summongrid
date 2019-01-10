@@ -1,5 +1,12 @@
 {
   "name": "summongrid",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "scripts": {
+    "watchify_players": "watchify -vd -e frontend/vueapp_players.js -o app/assets/javascripts/vueapp_players.js",
+    "serve": "./bin/rails server",
+    "hello": "echo 'hello'",
+    "dev": "npm-run-all --parallel watchify serve",
+    "build_players": "yarn install && cross-env NODE_ENV=production browserify -g envify frontend/vueapp_players.js > app/assets/javascripts/vueapp_players.js"
+  }
 }
