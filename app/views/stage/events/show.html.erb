@@ -2,16 +2,19 @@
     <h1>Event Management - <%= @event.title %></h1>
 
 
+
     <h2>Players</h2>
     <ul>
     <% @event.players.each do |p| %>
-        <li><%= p.name %></li>
+        <li> 
+            <%= p.name %>
+            <a target="_blank" href='<%=player_url(p)%>'><span class="glyphicon glyphicon-play"></span></a>
+        </li>
     <% end %>
     </ul>
 
 
     <h2>Add New Player</h2>
-
     <div class="inline-buttons">
     <%= button_to "Create New Player", stage_players_path(event_id: @event.id), method: :post, class:'btn btn-success' %>
     </div>
