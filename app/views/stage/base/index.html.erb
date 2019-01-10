@@ -1,0 +1,28 @@
+
+
+<div class="content">
+    <h1>Stage management</h1>
+    <p>Base layout of tools for creating Events etc</p>
+
+    <h2>Event List</h2>
+    <table class='table tony-striped'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Local time</th>
+            <th>Status</th>
+            <th>Players</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @events.each do |e| %>
+        <tr class='event_row'>
+            <td><%= e.title %>
+            <td><%= full_datetime_with_year(e.created_at) %></td>
+            <td>GOOD</td>
+            <td>TBC</td>
+        </tr>
+    <% end %>
+    </tbody>
+
+    </table>
