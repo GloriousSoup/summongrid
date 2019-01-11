@@ -20,6 +20,7 @@ class Event < ApplicationRecord
     end
 
     def update_demon_mood
+        #log "Citydash heartbeat starting up"
         self.times_poked = 0 if self.times_poked == nil
         self.times_poked += 1
 

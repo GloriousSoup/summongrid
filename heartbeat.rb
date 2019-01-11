@@ -17,19 +17,14 @@ end
 log "Citydash heartbeat starting up"
 
 EM.run {
-    log "Citydash heartbeat starting up 1"
-    log "Citydash heartbeat starting up 2"
 	heartbeat_timer = EventMachine::PeriodicTimer.new(60) do
-        log "Citydash heartbeat starting up3"
-        log "Citydash heartbeat starting up3"
-		log "Heartbeat at #{Time.now}"
+		#log "Heartbeat at #{Time.now}"
 		#Event.heartbeat
 	end
 
-	flutter_timer = EventMachine::PeriodicTimer.new(1) do
-        log "Citydash heartbeat starting up4"
-        log "Citydash heartbeat starting up4"
-        log "Flutter at #{Time.now}"
+	flutter_timer = EventMachine::PeriodicTimer.new(5) do
+		#log "Flutter at #{Time.now}"
+		Event.first.update_demon_mood
 		#Event.flutter
 	end
 }
