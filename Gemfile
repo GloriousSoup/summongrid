@@ -39,6 +39,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'activeadmin', '~> 1.4.3'
 gem 'devise'
+gem 'eventmachine'
+
+
+group :development, :staging do
+  gem 'foreman'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
