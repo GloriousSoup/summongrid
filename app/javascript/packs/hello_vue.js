@@ -32,27 +32,37 @@
 // </div>
 
 
- import Vue from 'vue/dist/vue.esm'
- import App from '../app.vue'
+import Vue from 'vue/dist/vue.esm'
+import VueFire from 'vuefire';
+import App from '../app.vue'
+
+Vue.use(VueFire);
 
 
-    import TestComponent from '../test_component.vue'
-    Vue.component('test-component', TestComponent)
 
-    Vue.component('user-name', {
-        props: ['name'],
-        template: '<p>Hi {{ name }}</p>'
+import FeedButton from '../feed_button.vue'
+Vue.component('feed-button', FeedButton)
+
+import TestComponent from '../test_component.vue'
+Vue.component('test-component', TestComponent)
+
+Vue.component('user-name', {
+    props: ['name'],
+    template: '<p>Hi {{ name }}</p>'
+})
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: "Can you say hello?"
+        },
     })
+})
 
- document.addEventListener('DOMContentLoaded', () => {
-   const app = new Vue({
-     el: '#app',
-     data: {
-       message: "Can you say hello?"
-     },
-     components: { App }
-   })
- })
+
+//debugger
 //
 //
 //

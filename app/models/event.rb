@@ -25,6 +25,8 @@ class Event < ApplicationRecord
         self.times_poked += 1
 
         update times_poked:times_poked,demon_mood:@@demon_moods.sample
+
+        #Set something in firebase
         save!
     end
 
