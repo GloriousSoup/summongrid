@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="food-container">
-        <h2>Demon/h2>
+        <h2>Demon</h2>
         <p><strong>Demon Name:</strong> {{demondata.name}}</p>
         <p><strong>Current Mood:</strong> {{demonmood['.value']}}</p>
         <p><strong>Times Fed:</strong> {{demondata['foodcount']}}</p>
