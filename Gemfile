@@ -40,7 +40,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'activeadmin', '~> 1.4.3'
 gem 'devise'
 gem 'eventmachine'
-gem 'webpacker', '>= 4.0.0.rc.2'
+gem 'webpacker', '~> 3.5'
 
 gem 'firebase'
 
