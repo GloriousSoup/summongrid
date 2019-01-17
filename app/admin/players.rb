@@ -12,4 +12,14 @@ ActiveAdmin.register Player do
 #   permitted
 # end
 
+    controller do
+        def permitted_params
+        params.permit!
+        end
+
+        def find_resource
+        scoped_collection.where(key: params[:id]).first!
+        end
+    end
+
 end

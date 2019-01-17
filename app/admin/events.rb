@@ -1,12 +1,24 @@
 ActiveAdmin.register Event do
 
 
+
   controller do
     def permitted_params
       params.permit!
     end
+
+    def find_resource
+      scoped_collection.where(key: params[:id]).first!
+    end
   end
-  
+
+  #config.filters = false
+
+  form do |f|
+    f.inputs "Basics" do
+      f.input :title
+    end
+  end
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
