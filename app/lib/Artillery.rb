@@ -10,6 +10,10 @@ class Artillery
 		@firebase.get(item_id)
 	end
 
+	def self.channel_for_test
+		return "test"
+	end
+	
     #One channel per game per group (crew/players). This is the citydash simplified firebase integration!
 	def self.channel_for(event,type) 
 		return "test" if !event
