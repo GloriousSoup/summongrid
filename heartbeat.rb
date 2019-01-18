@@ -23,9 +23,8 @@ EM.run {
 	end
 
 	flutter_timer = EventMachine::PeriodicTimer.new(5) do
-		#log "Flutter at #{Time.now}"
-		Event.first.update_demon_mood
-		#Event.flutter
+		log "Flutter at #{Time.now}"
+		Event.flutter
 	end
 }
 

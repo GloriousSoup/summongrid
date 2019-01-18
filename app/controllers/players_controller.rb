@@ -20,6 +20,7 @@ class PlayersController < ApplicationController
 
     def find_player
         @player = Player.find_by! key: params[:id].upcase
+        @event = @player.event
     end
 
 end

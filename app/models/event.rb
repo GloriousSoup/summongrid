@@ -19,17 +19,35 @@ class Event < ApplicationRecord
         save!
     end
 
-    def update_demon_mood
-        #log "Citydash heartbeat starting up"
+    def poke_demon
         self.times_poked = 0 if self.times_poked == nil
         self.times_poked += 1
 
         update times_poked:times_poked,demon_mood:@@demon_moods.sample
-
-        #Set something in firebase
         save!
+
+        do_sync
     end
 
+    def do_sync
+        eventData = {
+            demondata: {
+                name: "Varsuvius",
+                times_fed: 0,
+                times_poked: times_poked.to_i,
+                mood: self.demon_mood 
+            }
+        }
+
+        Artillery.set('',{Artillery.channel_for(self,"player") => eventData})
+    end
+    
+
+    def self.flutter
+        Event.where(is_started:true).each do |e|
+            e.poke_demon #syncs clients and sets dirty to false
+        end
+    end
 
 
     #Called once per minute
@@ -39,6 +57,7 @@ class Event < ApplicationRecord
     end
 
     def heartbeat
+        
     end
 
 

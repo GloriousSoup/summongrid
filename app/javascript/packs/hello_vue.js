@@ -38,8 +38,6 @@ import App from '../app.vue'
 
 Vue.use(VueFire);
 
-
-
 import FeedButton from '../feed_button.vue'
 Vue.component('feed-button', FeedButton)
 

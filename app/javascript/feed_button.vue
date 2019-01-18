@@ -4,7 +4,8 @@
         <h2>Demon</h2>
         <p><strong>Demon Name:</strong> {{demondata.name}}</p>
         <p><strong>Current Mood:</strong> {{demonmood['.value']}}</p>
-        <p><strong>Times Fed:</strong> {{demondata['foodcount']}}</p>
+        <p><strong>Times Poked:</strong> {{demondata['times_poked']}}</p>
+        <p><strong>Times Fed:</strong> {{demondata['times_fed']}}</p>
         <p>&nbsp;{{chewstring_current}}&nbsp;</p>
         <button id='feed-button' :disabled="is_feeding || !(readycount>0)" v-on:click="beginFeeding">{{feedstring}}</button>
     </div>
@@ -35,14 +36,15 @@ export default {
             chewstring_empty: '...',
             chewstring_full: 'Om nom NOM ',
             chewstring_current: '',
+            test: channel
         }
     },
     props: {
     },
     firebase: {
-        users: db.ref('users'),
-        demondata: {source: db.ref('demondata'), asObject: true },
-        demonmood: {source: db.ref('demondata/mood/'), asObject: true, readyCallback: function () { this.readycount++} }
+        users: db.ref(channel + '/users'),
+        demondata: {source: db.ref(channel + '/demondata'), asObject: true },
+        demonmood: {source: db.ref(channel + '/demondata/mood/'), asObject: true, readyCallback: function () { this.readycount++} }
     },
 	methods: {
         chewstep: function() {
@@ -78,8 +80,8 @@ export default {
             this.chew_count = 0;
             this.is_feeding = true;
 
-            var newcount = this.demondata['foodcount'] + 1
-            this.$firebaseRefs.demondata.child('foodcount').set(newcount);
+            var newcount = this.demondata['times_fed'] + 1
+            this.$firebaseRefs.demondata.child('times_fed').set(newcount);
         },
 		feedDemon: function() {
         }
