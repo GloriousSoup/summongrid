@@ -11,7 +11,8 @@ class Artillery
 	end
 
     #One channel per game per group (crew/players). This is the citydash simplified firebase integration!
-    def self.channel_for(event,type) 
+	def self.channel_for(event,type) 
+		return "test" if !event
         x = Rails.env.to_s[0..0] + "_summongrid_#{event.id}_#{type}"
         y = Digest::SHA256.hexdigest(x)[0..4]
         return "#{x}_#{y}"
