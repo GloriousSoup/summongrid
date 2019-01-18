@@ -35,16 +35,15 @@ export default {
             chew_count: 0,
             chewstring_empty: '...',
             chewstring_full: 'Om nom NOM ',
-            chewstring_current: '',
-            test: channel
+            chewstring_current: ''
         }
     },
     props: {
     },
     firebase: {
-        users: db.ref(channel + '/users'),
-        demondata: {source: db.ref(channel + '/demondata'), asObject: true },
-        demonmood: {source: db.ref(channel + '/demondata/mood/'), asObject: true, readyCallback: function () { this.readycount++} }
+        users: db.ref(firebase_channel + '/users'),
+        demondata: {source: db.ref(firebase_channel + '/demondata'), asObject: true },
+        demonmood: {source: db.ref(firebase_channel + '/demondata/mood/'), asObject: true, readyCallback: function () { this.readycount++} }
     },
 	methods: {
         chewstep: function() {

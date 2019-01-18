@@ -1,17 +1,6 @@
 import Firebase from 'firebase'
 
-var firebase_config = {
-    apiKey: "AIzaSyBNAKY0msBtQGYqUyn6gnEtKGEdOzbg7Ho",
-    authDomain: "summongrid.firebaseapp.com",
-    databaseURL: "https://summongrid.firebaseio.com",
-    projectId: "summongrid",
-    storageBucket: "summongrid.appspot.com",
-    messagingSenderId: "1042849663553"
-    //authToken?
-    //connectionRoot?
-    //connectionRootPrivate?
-};
-
+//firebase_config is created in 'show.html.erb' as it is built from the rails credentials.
 const firebaseApp = Firebase.initializeApp(firebase_config)
 const firebaseAuth = Firebase.auth()
 //var firebaseRef = firebaseApp.database().ref(firebase_config.connectionRoot);

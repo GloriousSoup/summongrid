@@ -4,7 +4,18 @@
     <title>Summongrid</title>
 
     <script>
-      var channel = '<%= Artillery.channel_for(@event,"player") %>';
+      var firebase_config = {
+        apiKey: "<%= Rails.application.credentials.firebase_js[:apiKey] %>",
+        authDomain: "<%= Rails.application.credentials.firebase_js[:authDomain] %>",
+        databaseURL: "<%= Rails.application.credentials.firebase_js[:databaseURL]%>",
+        projectId: "<%= Rails.application.credentials.firebase_js[:projectId]%>",
+        storageBucket: "<%= Rails.application.credentials.firebase_js[:storageBucket]%>",
+        messagingSenderId: "<%= Rails.application.credentials.firebase_js[:messagingSenderId]%>"
+      };
+      
+      var firebase_channel = '<%= Artillery.channel_for(@event,"player") %>';
+
+
     </script>
 
     <%= csrf_meta_tags %>
