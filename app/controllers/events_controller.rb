@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     end
 
     def change_mood
-      @event.update_demon_mood
+      @event.poke_demon
       redirect_back(fallback_location: root_path)   
     end
     
