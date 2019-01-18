@@ -13,7 +13,7 @@
         messagingSenderId: "<%= Rails.application.credentials.firebase_js[:messagingSenderId]%>"
       };
       
-      var firebase_channel = '<%= Artillery.channel_for_test %>';
+      var firebase_channel = '<%= Artillery.channel_for_test(@event,"player") %>';
 
 
     </script>
