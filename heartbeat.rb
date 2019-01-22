@@ -15,6 +15,7 @@ def log(m)
 end
 
 log "Citydash heartbeat starting up"
+puts "log Method 2 STARTUP"
 
 EM.run {
 	heartbeat_timer = EventMachine::PeriodicTimer.new(60) do
@@ -24,6 +25,8 @@ EM.run {
 
 	flutter_timer = EventMachine::PeriodicTimer.new(5) do
 		log "Flutter at #{Time.now}"
+		log "log Method 1"
+		puts "log Method 2"
 		Event.flutter
 	end
 }
