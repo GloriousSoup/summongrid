@@ -20,6 +20,7 @@ class Event < ApplicationRecord
     end
 
     def poke_demon
+        puts ("Demon Poked")
         self.times_poked = 0 if self.times_poked == nil
         self.times_poked += 1
 
